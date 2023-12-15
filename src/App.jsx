@@ -1,7 +1,30 @@
 import "./App.css";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 
 function App() {
-  return <div className="App"></div>;
+  const [songs, setSongs] = useState([]);
+  const [activeIndx, setActiveIndx] = useState(-1);
+  const fetchSongs = async () => {
+    try {
+      const response = await axios.get("https://localhost:7031/api/Songs/");
+      setSongs(response.data);
+    } catch (error) {
+      console.warn("fetchSongs request error: ", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchSongs();
+  }, []);
+
+  const selectedSong = songs[activeindx];
+
+  return (
+    <div className="App">
+      <Header />
+    </div>
+  );
 }
 
 export default App;
