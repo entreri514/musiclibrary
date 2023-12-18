@@ -3,7 +3,11 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import SongInfo from "./components/SongInfo/SongInfo";
-
+import SongList from "./components/SongList/SongList";
+import SongSearch from "./components/SongSearch/SongSearch";
+import SongDelete from "./components/SongDelete/SongDelete";
+import SongEdit from "./components/SongEdit/SongEdit";
+import SongAdd from "./components/SongAdd/SongAdd";
 function App() {
   const [songs, setSongs] = useState([]);
   const [activeIndx, setActiveIndx] = useState(-1);
@@ -11,6 +15,7 @@ function App() {
     try {
       const response = await axios.get("https://localhost:7031/api/Songs/");
       setSongs(response.data);
+      console.log(response);
     } catch (error) {
       console.warn("fetchSongs request error: ", error);
     }
@@ -25,7 +30,12 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <SongSearch />
+      <SongList songs={songs} />
       <SongInfo />
+      <SongEdit />
+      <SongDelete />
+      <SongAdd />
     </div>
   );
 }
