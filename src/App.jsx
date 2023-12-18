@@ -5,9 +5,9 @@ import Header from "./components/Header/Header";
 import SongInfo from "./components/SongInfo/SongInfo";
 import SongList from "./components/SongList/SongList";
 import SongSearch from "./components/SongSearch/SongSearch";
-import SongDelete from "./components/SongDelete/SongDelete";
 import SongEdit from "./components/SongEdit/SongEdit";
 import SongAdd from "./components/SongAdd/SongAdd";
+import SongItem from "./components/SongItem/SongItem";
 function App() {
   const [songs, setSongs] = useState([]);
   const [activeIndx, setActiveIndx] = useState(-1);
@@ -30,12 +30,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SongSearch />
-      <SongList songs={songs} />
-      <SongInfo />
-      <SongEdit />
-      <SongDelete />
-      <SongAdd />
+      <div className="flex-container">
+        <SongSearch />
+        <SongList songs={songs} />
+        <SongInfo />
+        <SongItem onDelete={fetchSongs} />
+        <SongAdd onNewSong={fetchSongs} />
+      </div>
     </div>
   );
 }

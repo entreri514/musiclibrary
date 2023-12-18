@@ -6,6 +6,7 @@ const SongList = ({ songs = [] }) => {
   const songItems = songs.map((song) => (
     <SongItem
       key={song.id}
+      id={song.id}
       title={song.title}
       artist={song.artist}
       album={song.album}

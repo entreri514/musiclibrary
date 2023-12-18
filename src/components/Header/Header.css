@@ -1,0 +1,7 @@
+header {
+  background-color: lightsalmon;
+  padding: 100px, 50x;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
