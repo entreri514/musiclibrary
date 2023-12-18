@@ -26,7 +26,9 @@ const SongList = ({ songs = [] }) => {
           <th>Release Date</th>
           <th>Genre</th>
         </tr>
-        <td>{songItems}</td>
+        <tr>
+          <td>{songItems}</td>
+        </tr>
       </table>
     </div>
   );
