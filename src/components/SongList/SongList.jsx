@@ -18,14 +18,14 @@ const SongList = ({ songs = [] }) => {
     <div>
       <h4>My Music List</h4>
       <table>
-        <thead>
+        <tr>
           <th>Title</th>
           <th>Artist</th>
           <th>Album</th>
           <th>Release Date</th>
           <th>Genre</th>
-        </thead>
-        <tr>{songItems}</tr>
+        </tr>
+        <td>{songItems}</td>
       </table>
     </div>
   );
