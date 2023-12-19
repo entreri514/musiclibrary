@@ -18,7 +18,7 @@ const SongList = ({ songs = [] }) => {
   return (
     <div>
       <h4>My Music List</h4>
-      <table>
+      <table className="flex.item">
         <tr>
           <th>Title</th>
           <th>Artist</th>
@@ -26,9 +26,7 @@ const SongList = ({ songs = [] }) => {
           <th>Release Date</th>
           <th>Genre</th>
         </tr>
-        <tr>
-          <td>{songItems}</td>
-        </tr>
+        <tr>{songItems}</tr>
       </table>
     </div>
   );

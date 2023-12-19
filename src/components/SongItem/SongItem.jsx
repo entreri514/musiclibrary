@@ -26,29 +26,27 @@ const SongItem = ({ id, title, artist, album, releaseDate, genre }) => {
   const btnClass = isDelete ? "btn btn-success" : "btn btn-secondary";
 
   return (
-    <table>
-      <div className="flex-item">
-        <tr>
-          <td>{title}</td>
-          <td>{artist}</td>
-          <td>{album}</td>
-          <td>{releaseDate}</td>
-          <td>{genre}</td>
+    <div className="flex-item">
+      <tr>
+        <td>{title}</td>
+        <td>{artist}</td>
+        <td>{album}</td>
+        <td>{releaseDate}</td>
+        <td>{genre}</td>
 
-          {
-            <div className="d-flex justify-content-end">
-              <button className="btn btn-primary" type="button">
-                Edit
-              </button>
-            </div>
-          }
+        {
+          <div className="d-flex justify-content-end">
+            <button className="btn btn-primary" type="button">
+              Edit
+            </button>
+          </div>
+        }
 
-          <button className={btnClass} onClick={handleDelete}>
-            Delete
-          </button>
-        </tr>
-      </div>
-    </table>
+        <button className={btnClass} onClick={handleDelete}>
+          Delete
+        </button>
+      </tr>
+    </div>
   );
 };
 
